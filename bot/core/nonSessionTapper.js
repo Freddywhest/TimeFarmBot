@@ -174,7 +174,6 @@ class NonSessionTapper {
 
     let farm_info;
     let user_balance;
-    let sleep_time = 0;
     let farmingTime = 0;
     let access_token;
 
@@ -277,8 +276,6 @@ class NonSessionTapper {
                   farmingTime - currentTime > 0 ? farmingTime - currentTime : 0
                 }</pi> seconds.`
               );
-              sleep_time =
-                farmingTime - currentTime > 0 ? farmingTime - currentTime : 0;
             }
           } else {
             const result_start = await this.api.start_farming(http_client);
@@ -304,15 +301,9 @@ class NonSessionTapper {
         );
       } finally {
         logger.info(
-          `<ye>[${this.bot_name}]</ye> | ${
-            this.session_name
-          } | 😴 sleeping for ${
-            sleep_time > 0 ? sleep_time : settings.SLEEP_BETWEEN_REQUESTS
-          } seconds...`
+          `<ye>[${this.bot_name}]</ye> | ${this.session_name} | 😴 sleeping for ${settings.SLEEP_BETWEEN_REQUESTS} seconds...`
         );
-        await sleep(
-          sleep_time > 0 ? sleep_time : settings.SLEEP_BETWEEN_REQUESTS
-        );
+        await sleep(settings.SLEEP_BETWEEN_REQUESTS);
       }
     }
   }
