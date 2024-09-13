@@ -14,6 +14,7 @@
 | Claiming daily quiz reward            |    ✅     |
 | Starting Farming                      |    ✅     |
 | Multithreading                        |    ✅     |
+| Caching session data                  |    ✅     |
 | Using a session/query_id              |    ✅     |
 | Binding a proxy to a session/query_id |    ✅     |
 | Random sleep time between clicks      |    ✅     |
