@@ -6,7 +6,7 @@ const app = {
   webviewUrl: "https://timefarm.app",
   origin: "https://timefarm.app",
   referer: "https://timefarm.app",
-  quiz: "https://rockyrabbitcombos.ribedo.org/data.json",
+  quiz: "https://raw.githubusercontent.com/Freddywhest/rocky-rabbit-combos/refs/heads/main/data.json",
 };
 
 module.exports = app;
