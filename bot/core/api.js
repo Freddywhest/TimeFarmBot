@@ -1,3 +1,4 @@
+const { default: axios } = require("axios");
 const app = require("../config/app");
 const logger = require("../utils/logger");
 var _ = require("lodash");
@@ -138,9 +139,9 @@ class ApiRequest {
     }
   }
 
-  async get_quiz_answer(http_client) {
+  async get_quiz_answer() {
     try {
-      const response = await http_client.get(`${app.quiz}`);
+      const response = await axios.get(`${app.quiz}`);
       return response.data;
     } catch (error) {
       if (error?.response?.data?.message) {
